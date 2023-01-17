@@ -15,7 +15,7 @@ labels ={
 
 #split the data set
 from sklearn.model_selection import train_test_split
-x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=.50)
+x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=.60)
 
 #Using decision tree algorithm
 from sklearn import tree
@@ -30,5 +30,7 @@ pickle.dump(classifier, open('model.pkl','wb'))
 model = pickle.load( open('model.pkl','rb'))
 x = [[6.7, 3.3, 5.7, 2.1]]
 predict = model.predict(x)
+print(predict)
 print("Hello Worlds")
 print(labels[predict[0]])
+#print(labels[predict[0]])
